@@ -1,0 +1,175 @@
+#a
+  %header
+    %a{:href => "/", :title => "Startseite"}
+      %strong Backbone.js
+      light JS MVC
+  #b
+    %article
+      %h1 HTML5 & CSS3 Template
+      %img{:src => "i/image-1.png", :title => "#H1#"}/
+      %h2 This W3C-compliant, CSS-based website template has a Creative Commons Attribution-Share Alike 3.0 Unported License.
+      %p
+        Feel free to remix, copy, distribute and transmit this template. Just know that you must attribute the work in the manner specified by me. Please see the license. Also, if you alter, transform, or build upon this work, you may distribute the resulting work only under the same, similar or a compatible license. All I ask is that you include a link back to
+        %a{:href => "http://www.jabz.info/contact/jonas-jared-jacek/", :title => "Profile of Jonas Jared Jacek"} my website
+        in your credits.
+      %h3 Let the Show Begin - Pre and Code
+      %p
+        This is how it looks if you use
+        %code pre
+        and
+        %code code
+        together, for example to highlight and nicely markup a piece of code:
+      %pre
+        %code
+          pre {
+          font-size : 12px;
+          background : #F0F0F0;
+          }
+      %h3 Example Blockquote
+      %p If you want to quote somebody, you can use this perfectly semantic example for a blockquote:
+      %cite Jonas Jacek
+      %blockquote{:cite => "http://www.rield.com/"}
+        During my years in the Internet Marketing business I have seen and done many things I never thought would be of interest to me or anyone else.
+      %h3 Examples Alerts, Notice  & Confirmation
+      %p These sample styles for alerts and notices are useful if you want to use the template in content management systems.
+      %p.highlight-1
+        %strong Alert:
+        This is how an alert looks like.
+      %p.highlight-2
+        %strong Notice:
+        This is how a notice looks like.
+      %p.highlight-3
+        %strong Confirmation:
+        This is how a confirmation looks like.
+      %h3 Example Table
+      %p The following is the design for a table. The style is simple and user-friendly. Some of the effects were made with CSS3.
+      %table
+        %caption Mini HTML5 Reference Guide
+        %tbody
+          %tr
+            %th Tag
+            %th Info
+            %th Attributes
+          %tr
+            %td <abbr>
+            %td abbreviation
+            %td global attributes**
+          %tr
+            %td <area>
+            %td in an image map
+            %td alt, coords, href, hreflang, media, ping, rel, shape, target, type
+          %tr
+            %td <article>
+            %td article/ content
+            %td global attributes**
+          %tr
+            %td <aside>
+            %td sidebar
+            %td global attributes**
+          %tr
+            %td <audio>
+            %td sound content
+            %td autobuffer, autoplay, controls, loop, src
+          %tr
+            %td <b>
+            %td bold text
+            %td global attributes**
+      %h3 Example hCalendar
+      %p The following is a definition list in combination with the hCalendar microformat.
+      %dl.vevent
+        %dt.dtstart
+          %abbr.dtstart{:title => "2010-11-18"} 11-18-2010
+        %dd.summary Conference Name
+        %dd
+          %a.url{:href => "#"} http://www.conference-website.com/
+        %dd.description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec eleifend diam. Fusce lobortis odio ac sem scelerisque sed iaculis purus ornare.
+      %h3 Example Video
+      %p You can put your Video-Files here...
+      %video{:controls => "", :src => "movie.ogg"} your browser does not support the video tag
+      %h3 Example Audio
+      %p You can put your Audio-Files here...
+      %audio{:controls => "", :src => "file.ogg"} your browser does not support the audio tag
+      %h3 Example Lists
+      %p Two different kinds of lists were styled: Ordered lists (ol) and unordered (ul) lists.
+      %ol
+        %li This is
+        %li The Ordered
+        %li Listing
+      %ul
+        %li This is
+        %li The Unordered
+        %li Listing
+      %h3 Example Form
+      %p This is how a form will look like in this template.
+      %form{:action => "#"}
+        %label Name
+        %input{:name => "#", :type => "text", :value => "Your Name"}
+          %label Email
+          %input{:name => "#", :type => "text", :value => "Your Email"}
+            %label Your Comments
+            %textarea This is a Comment...
+            %br
+              %input.button{:type => "submit"}
+      %section.meta
+        %p
+          Author:
+          %a{:href => "http://www.michaltaberski.com/"} Jonas Jacek
+          | Date: 2010-01-21 | Comments:
+          %a{:href => "#"} 7
+        %p
+          Tags:
+          = succeed "," do
+            %a{:href => "#", :rel => "tag"} quisquam
+          = succeed "," do
+            %a{:href => "#", :rel => "tag"} Tags
+          %a{:href => "#", :rel => "tag"} dolorem
+          = succeed "," do
+            %a{:href => "#", :rel => "tag"} Tags
+          %a{:href => "#", :rel => "tag"} Tags
+    %aside
+      %h4 Search
+      %form.s{:action => "#"}
+        %input{:name => "search", :type => "text", :value => "Type term and hit enter..."}
+      %h4 About
+      #c
+        %p
+          It`s simple demo of backbone.js relesed by
+          %a{:href => "http://documentcloud.github.com/backbone/"} Document Cloud.
+          Project is a part of presenattion for RuPy Tuesday Poznań.
+        %p Template credits are in the bootom of the page.
+        %p I strongly believe in open-source software and open standards.
+      %nav
+        %h4 Navigation
+        %ul
+          %li
+            %a{:href => "#"} Lorem
+          %li
+            %a{:href => "#"} Ipsum
+          %li.active
+            %a{:href => "#"} Dolor Sit
+            %ul
+              %li
+                %a{:href => "#"} Amet
+              %li
+                %a{:href => "#"} Amet
+          %li
+            %a{:href => "#"} Downloads
+          %li
+            %a{:href => "#"} Contact
+      -#%h4 Example Blogroll
+      -#%ul
+      -#  %li
+      -#    %a{:href => "http://www.jabz.biz/"} Jabz Internet Marketing GmbH
+      -#  %li
+      -#    %a{:href => "http://www.jabz.info/contact/jonas-jared-jacek/"} Jonas Jacek
+      -#  %li
+      -#    %a{:href => "http://www.w3.org/"} World Wide Web Consortium
+      -#  %li
+      -#    %a{:href => "http://www.getfirefox.com/"} Firefox Web Browser
+  %footer
+    %p
+      Template Design & Markup by
+      %a{:href => "http://www.jabz.info/contact/jonas-jared-jacek/", :title => "Profile of Jonas Jacek"} Jonas Jacek
+      for
+      = succeed "." do
+        %a{:href => "http://www.owmx.com/", :title => "Free HTML5 & CSS3 Web Template | owmx.com"} Free HTML5 & CSS3 Web Templates
