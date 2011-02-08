@@ -1,2 +1,5 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+/* DO NOT MODIFY. This file was compiled Tue, 08 Feb 2011 20:20:04 GMT from
+ * /Users/tesla/Sites/Ruby_projects/backbone_demo/app/coffeescripts/application.coffee
+ */
+
+(function() {});
