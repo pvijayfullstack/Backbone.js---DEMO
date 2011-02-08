@@ -7,9 +7,6 @@ tmp
 public/uploads/**/*
 public/stylesheets/*.css
 public/javascripts/*_all.js
-public/stylesheets/s/*.css
-nbproject/*
-assets/**/*
 config/database.yml
 config/s3_config.yml
 config/backup_fu.yml
