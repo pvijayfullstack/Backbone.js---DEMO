@@ -1,5 +1,5 @@
-/* DO NOT MODIFY. This file was compiled Sun, 13 Feb 2011 20:13:09 GMT from
- * /Users/tesla/Sites/Ruby_projects/backbone_demo/app/coffeescripts/application.coffee
+/* DO NOT MODIFY. This file was compiled Sun, 13 Feb 2011 23:00:40 GMT from
+ * /Users/smoku/Rails/examples/backbone.js/app/coffeescripts/application.coffee
  */
 
 var Comment, Comments, Home;
@@ -18,8 +18,17 @@ Comment = (function() {
     Comment.__super__.constructor.apply(this, arguments);
   }
   __extends(Comment, Backbone.Model);
-  Comment.prototype.url = '/comments';
   Comment.prototype.name = 'comment';
+  Comment.prototype.url = function() {
+    if (this.id) {
+      return "/comments/" + this.id;
+    } else {
+      return "/comments";
+    }
+  };
+  Comment.prototype.change = function() {
+    return $('#comments').html("<p><a href='#show/" + this.id + "'>" + (this.get('title')) + "</a></p>");
+  };
   return Comment;
 })();
 Comments = (function() {
@@ -30,6 +39,7 @@ Comments = (function() {
   Comments.prototype.model = Comment;
   Comments.prototype.url = '/comments';
   Comments.prototype.refresh = function(models) {
+    $('#comments').html('');
     return _.each(models, function(model) {
       return $('#comments').append("<p><a href='#show/" + model.comment.id + "'>" + model.comment.title + "</a></p>");
     });
@@ -37,31 +47,23 @@ Comments = (function() {
   return Comments;
 })();
 Home = (function() {
+  function Home() {
+    Home.__super__.constructor.apply(this, arguments);
+  }
   __extends(Home, Backbone.Controller);
   Home.prototype.routes = {
     '': 'index',
     'show/:id': 'show'
   };
-  function Home(data) {
-    Home.__super__.constructor.call(this, data);
-    _.bindAll(this, "index");
-    alert('powstałem');
-  }
   Home.prototype.index = function() {
-    this.test = 'test';
     this.comments = new Comments();
-    return this.comments.fetch({
-      success: function(collection, response) {
-        return console.log(collection.toJSON());
-      }
-    });
+    return this.comments.fetch();
   };
   Home.prototype.show = function(id) {
-    var comment;
-    alert(this.test);
-    comment = this.comments.get(id);
-    console.log(this.comments);
-    return console.log(comment);
+    this.comment = new Comment({
+      id: id
+    });
+    return this.comment.fetch();
   };
   return Home;
 })();
