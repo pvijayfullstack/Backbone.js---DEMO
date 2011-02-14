@@ -1,7 +1,7 @@
 Backbone.emulateHTTP = true
 Backbone.emulateJSON = false
 
-class Comment extends Backbone.Model
+class CommentModel extends Backbone.Model
   name: 'comment'
   url: -> 
     if @id then "/comments/#{@id}" else "/comments"
@@ -10,8 +10,8 @@ class Comment extends Backbone.Model
     $('#comments').html("<p><a href='#show/#{@id}'>#{@get('title')}</a></p>")
     
 
-class Comments extends Backbone.Collection
-  model: Comment
+class CommentsCollection extends Backbone.Collection
+  model: CommentModel
   url: '/comments'
 
   refresh: (models)->
@@ -19,16 +19,18 @@ class Comments extends Backbone.Collection
     _.each(models, (model) ->
       $('#comments').append("<p><a href='#show/#{model.comment.id}'>#{model.comment.title}</a></p>")
     )
-      
+
+Comments = new CommentsCollection()      
+
 class Home extends Backbone.Controller
   routes:
     '': 'index'
     'show/:id': 'show'
   
   index: ->
-    @comments = new Comments()
-    @comments.fetch()
-  
+    $('#commentTemplate').tmpl(data).appendTo('#commentsContener')
+
+
   show: (id)->
     @comment = new Comment({id: id})
     @comment.fetch()

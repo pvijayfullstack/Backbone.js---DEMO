@@ -2,5 +2,5 @@ BackboneDemo::Application.routes.draw do
 
   resources :comments
 
-  root :to => "comments#index"
+  root :to => "home#index"
 end

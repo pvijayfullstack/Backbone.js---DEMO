@@ -11,45 +11,17 @@
         %a{:href => "http://documentcloud.github.com/backbone/"} Document Cloud.
         %br Project is a part of presenattion for RuPy Tuesday Poznań.
 
-      %h3 Examples Alerts, Notice  & Confirmation
-      %p These sample styles for alerts and notices are useful if you want to use the template in content management systems.
-      %p.highlight-1
-        %strong Alert:
-        This is how an alert looks like.
-      %p.highlight-2
-        %strong Notice:
-        This is how a notice looks like.
-      %p.highlight-3
-        %strong Confirmation:
-        This is how a confirmation looks like.
-
-      %h3 Comments
-      %p This is how a form will look like in this template.
+      #commentsContener
+        
       %form{:action => "#"}
-        %label Name
-        %input{:name => "#", :type => "text", :value => "Your Name"}
-          %label Email
-          %input{:name => "#", :type => "text", :value => "Your Email"}
-            %label Your Comments
-            %textarea This is a Comment...
+        %label Author
+        %input{:name => "#", :type => "text"}
+          %label Title
+          %input{:name => "#", :type => "text"}
+            %label Body
+            %textarea
             %br
-              %input.button{:type => "submit"}
-      %section.meta
-        %p
-          Author:
-          %a{:href => "http://www.michaltaberski.com/"} Jonas Jacek
-          | Date: 2010-01-21 | Comments:
-          %a{:href => "#"} 7
-        %p
-          Tags:
-          = succeed "," do
-            %a{:href => "#", :rel => "tag"} quisquam
-          = succeed "," do
-            %a{:href => "#", :rel => "tag"} Tags
-          %a{:href => "#", :rel => "tag"} dolorem
-          = succeed "," do
-            %a{:href => "#", :rel => "tag"} Tags
-          %a{:href => "#", :rel => "tag"} Tags
+              %input#submit.button{:type => "submit"}
     %aside
       %h4 Search
       %form.s{:action => "#"}
@@ -62,31 +34,6 @@
           for
           = succeed "." do
             %a{:href => "http://www.owmx.com/", :title => "Free HTML5 & CSS3 Web Template | owmx.com"} Free HTML5 & CSS3 Web Templates
-
-
-        -#%p
-        -#  It`s simple demo of backbone.js relesed by
-        -#  %a{:href => "http://documentcloud.github.com/backbone/"} Document Cloud.
-        -#  Project is a part of presenattion for RuPy Tuesday Poznań.
-        -#%p Template credits are in the bootom of the page.
-      -#%nav
-      -#  %h4 Navigation
-      -#  %ul
-      -#    %li
-      -#      %a{:href => "#"} Lorem
-      -#    %li
-      -#      %a{:href => "#"} Ipsum
-      -#    %li.active
-      -#      %a{:href => "#"} Dolor Sit
-      -#      %ul
-      -#        %li
-      -#          %a{:href => "#"} Amet
-      -#        %li
-      -#          %a{:href => "#"} Amet
-      -#    %li
-      -#      %a{:href => "#"} Downloads
-      -#    %li
-      -#      %a{:href => "#"} Contact
   %footer
     %p
       Template Design & Markup by
@@ -94,3 +41,17 @@
       for
       = succeed "." do
         %a{:href => "http://www.owmx.com/", :title => "Free HTML5 & CSS3 Web Template | owmx.com"} Free HTML5 & CSS3 Web Templates
+
+%script#commentTemplate{:type => 'text/x-jquery-tmpl'}
+  %h3 ${comment.title}
+  %p ${comment.body}
+  %section.meta
+    %p
+      Author: ${comment.author}
+      | Date: ${comment.created_at}
+
+
+:javascript
+  Comments.refresh(#{@comments.to_json});
+  console.log(Comments);
+  data = #{@comments.to_json}

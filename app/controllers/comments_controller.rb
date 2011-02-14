@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
 
-  respond_to :json, :html
+  respond_to :json
   def show
     @comment = Comment.find(params[:id])
     respond_with(@comment)
