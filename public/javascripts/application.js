@@ -1,8 +1,8 @@
-/* DO NOT MODIFY. This file was compiled Mon, 14 Feb 2011 21:21:29 GMT from
+/* DO NOT MODIFY. This file was compiled Sat, 19 Feb 2011 18:10:12 GMT from
  * /Users/tesla/Sites/Ruby_projects/backbone_demo/app/coffeescripts/application.coffee
  */
 
-var CommentModel, Comments, CommentsCollection, Home;
+var CommentModel, Comments, CommentsCollection, CommentsView, Home;
 var __hasProp = Object.prototype.hasOwnProperty, __extends = function(child, parent) {
   for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; }
   function ctor() { this.constructor = child; }
@@ -45,6 +45,16 @@ CommentsCollection = (function() {
     });
   };
   return CommentsCollection;
+})();
+CommentsView = (function() {
+  function CommentsView() {
+    CommentsView.__super__.constructor.apply(this, arguments);
+  }
+  __extends(CommentsView, Backbone.View);
+  CommentsView.prototype.events = {
+    'click #some_id': 'method_name'
+  };
+  return CommentsView;
 })();
 Comments = new CommentsCollection();
 Home = (function() {

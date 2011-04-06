@@ -20,6 +20,11 @@ class CommentsCollection extends Backbone.Collection
       $('#comments').append("<p><a href='#show/#{model.comment.id}'>#{model.comment.title}</a></p>")
     )
 
+class CommentsView extends Backbone.View
+  events:
+    'click #some_id': 'method_name'
+
+
 Comments = new CommentsCollection()      
 
 class Home extends Backbone.Controller
